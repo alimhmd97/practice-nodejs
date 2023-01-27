@@ -1,8 +1,4 @@
-const http=require('http')
-const server = http.createServer((req,res)=>{
-if(req.method==='Get'&&req.url==='/'){
-req.statusCode(200);
-req.end();
-}
+const app=require('./server');
+app.listen('3000',()=>{
+    console.log('hello from port 3001');
 })
-server.listen(3001,()=>console.log('test'))
