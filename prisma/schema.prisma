@@ -47,7 +47,9 @@ model Update {
 
   productId String
   product   Product @relation(fields: [productId], references: [id])
+  updatePoints UpdatePoints[]
 }
+
  model UpdatePoints{
     id        String   @id @default(uuid())
   createdAt DateTime @default(now())
@@ -55,4 +57,6 @@ model Update {
 
 name String @db.VarChar(255)
 description String
+updateId String
+update Update @relation(fields: [updateId],references: [id])
  }
