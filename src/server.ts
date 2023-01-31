@@ -1,4 +1,6 @@
 import express from'express';
+import router from './router';
+
 const app = express();
 app.get('/',(req,res)=>{
     console.log('hello from express');
@@ -6,3 +8,4 @@ app.get('/',(req,res)=>{
     res.json({message:'Hello'});
 })
 export{app}; 
+app.use('/api',router)
